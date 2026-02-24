@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gaming Navigation</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#111;
+font-family:Arial, sans-serif;
+overflow:hidden;
+}
+/* ===== BOUTONS ARC-EN-CIEL ===== */
+.gaming-btn{
+padding:20px 60px;
+margin:20px 0; /* les met bien l&#8217;un en dessous de l&#8217;autre */
+font-size:22px;
+font-weight:bold;
+border:none;
+border-radius:15px;
+cursor:pointer;
+color:white;
+background:linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+background-size:1400% 1400%;
+animation:rainbow 5s linear infinite;
+box-shadow:0 0 20px rgba(255,255,255,0.4);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gaming-btn:hover{
+transform:scale(1.15) rotate(-3deg);
+box-shadow:0 0 40px rgba(255,255,255,1);
+}
+@keyframes rainbow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+/* ===== LOADING SCREEN ===== */
+.loading-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+opacity:0;
+pointer-events:none;
+transition:opacity 0.5s;
+}
+.loading-screen.active{
+opacity:1;
+pointer-events:all;
+}
+.spinner{
+width:70px;
+height:70px;
+border:6px solid #333;
+border-top:6px solid #00aaff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+</style>
+</head><body>
+<button class="gaming-btn" onclick="actionBack()">
+Se connecter
+</button><button class="gaming-btn" onclick="actionVoirCompte()">
+Voir compte
+</button><button class="gaming-btn" onclick="actionLogout()">
+Déconnexion
+</button><!-- LOADING -->
+<div class="loading-screen" id="loading">
+<div class="spinner"><br><br><br><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><span style="font-weight: bold;"><br>
+</span>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><span style="font-weight: bold;"><br>
+vv</span><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+v</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script>
+<h1>Bienvenue sur le site &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h1>
+<div id="menuOptions">
+<p id="fermer" onclick="fermerMenu()">&#10060; Fermer</p>
+<a href="profil.html">&#128100; Profil</a>
+<a href="parametres.html">&#9881;&#65039; Paramètres</a>
+<a href="aide.html">&#10067; Aide</a>
+<a href="securite.html">&#128274; Sécurité</a>
+<a href="pagen2sitleo.html#" onclick="deconnexion()">&#128682;
+Déconnexion</a>
+</div>
+<span style=""></span><button id="boutonOptions" onclick="ouvrirMenu()">&#9881;&#65039; Options</button>
+<script>
+function ouvrirMenu() {
+document.getElementById("menuOptions").style.left = "0";
+}
+function fermerMenu() {
+document.getElementById("menuOptions").style.left = "-220px";
+}
+function deconnexion() {
+alert("Vous êtes déconnecté !");
+window.location.href = "index.html";
+}
+</script></div>
+<h2>Chargement...</h2>
+</div>
+<script>
+function showLoading(callback){
+const loading = document.getElementById("loading");
+loading.classList.add("active");
+setTimeout(()=>{
+callback();
+}, 2000); // 2 secondes
+}
+function actionBack(){
+showLoading(()=>{
+window.history.go(-2);
+});
+}
+function actionVoirCompte(){
+showLoading(()=>{
+window.history.go(-2);
+});
+}
+function actionLogout(){
+showLoading(()=>{
+localStorage.clear();
+window.history.go(-2);
+});
+}
+</script>
+</body></html>

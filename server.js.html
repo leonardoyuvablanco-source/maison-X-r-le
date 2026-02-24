@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><title></title>
+
+// server.js
+import express from 'express';
+import fetch from 'node-fetch';
+import cors from 'cors';
+const app = express();
+app.use(express.json());
+app.use(cors()); // Permet à ton front-end (Composer) d'appeler le serveur
+// Historique de chat côté serveur (optionnel)
+let chatHistory = [];
+app.post('/chat', async (req, res) =&gt; {
+const userMessage = req.body.message;
+if(!userMessage) return res.status(400).json({error:'Message vide'});
+// Ajoute le message à l'historique
+chatHistory.push({role:"user", content:userMessage});
+try {
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+'Authorization': 'Bearer VOTRE_CLE_API_ICI' // &lt;-- Mets ta clé OpenAI ici
+},
+body: JSON.stringify({
+model: "gpt-3.5-turbo", // ou "gpt-4"
+messages: chatHistory
+})
+});
+const data = await response.json();
+const reply = data.choices[0].message.content;
+// Ajoute la réponse à l'historique
+chatHistory.push({role:"assistant", content:reply});
+res.json({reply});
+} catch(err){
+console.error(err);
+res.status(500).json({error:'Impossible de contacter OpenAI'});
+}
+});
+// Lancer le serveur
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ()=&gt; console.log(`Serveur lancé sur le port ${PORT}`));
+</head><body>
+<br>
+</body></html>

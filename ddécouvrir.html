@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8"><title>Accueil</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#0d1117;
+font-family:Arial, sans-serif;
+}
+.gaming-btn{
+padding:20px 60px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+cursor:pointer;
+color:white;
+background:linear-gradient(270deg,#007bff,#00aaff,#007bff);
+background-size:400% 400%;
+animation:blueGlow 4s ease infinite;
+box-shadow:0 0 20px rgba(0,170,255,0.6);
+transition:0.3s;
+}
+.gaming-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 35px rgba(0,170,255,1);
+}
+@keyframes blueGlow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+</style></head>
+<body>
+<a href="vissiiiittteee.html"><button class="gaming-btn" onclick="window.location.href='visiter.html'">
+Visiter le site
+</button></a>
+</body></html>

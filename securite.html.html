@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8"><title>Sécurité - Maison X Réelle</title>
+
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #eef2f7;
+margin: 0;
+padding: 0;
+}
+.container {
+max-width: 600px;
+margin: 30px auto;
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+color: #2c3e50;
+}
+button {
+background-color: #e74c3c;
+color: white;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+button:hover {
+background-color: #c0392b;
+}
+</style>
+</head><body>&nbsp;<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<div class="container">
+<h1>🛡 Sécurité et Protection</h1>
+<p><strong>Si tu es victime de cyberharcèlement :</strong></p>
+<ul>
+<li>Ne réponds pas au harceleur</li>
+<li>Fais des captures d’écran</li>
+<li>Bloque la personne</li>
+<li>Parle à un adulte de confiance</li>
+</ul>
+<h2>Appeler le 3018!!!!<br></h2>
+
+<h2>📩 Signaler un problème</h2>
+<form id="signalForm">
+<label>Ton prénom :</label><br>
+
+<textarea id="message" required="" minlength="5"></textarea><label></label><br>
+<label>Explique le problème :</label><br>&nbsp;<input id="captcha" required="" type="text">
+<p id="error"><button type="submit">Envoyer</button></p>
+</form>
+<button id="captureBtn">📸 Faire une capture d'écran</button>
+</div>
+<script>
+// Formulaire sécurisé
+document.getElementById("signalForm").addEventListener("submit", function(e){
+e.preventDefault();
+let name = document.getElementById("name").value.trim();
+let message = document.getElementById("message").value.trim();
+let captcha = document.getElementById("captcha").value.trim();
+let error = document.getElementById("error");
+// Vérification des champs
+if(name === "" || message === ""){
+error.textContent = "Tous les champs doivent être remplis.";
+return;
+}
+// Vérification anti-robot
+if(captcha !== "5"){
+error.textContent = "Vérification incorrecte.";
+return;
+}
+// Protection simple contre le code dangereux
+if(name.includes("<") || message.includes("<")){
+error.textContent = "Caractères interdits détectés.";
+return;
+}
+error.textContent = "";
+alert("Signalement envoyé en toute sécurité !");
+});
+// Capture d'écran
+document.getElementById("captureBtn").addEventListener("click", function(){
+html2canvas(document.body).then(function(canvas){
+let link = document.createElement("a");
+link.download = "capture_maison_x.png";
+link.href = canvas.toDataURL();
+link.click();
+});
+});
+</script>
+</body></html>

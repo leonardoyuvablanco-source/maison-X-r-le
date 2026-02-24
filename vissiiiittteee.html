@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"><title>vissiiiittteee</title>
+
+<meta charset="UTF-8"><style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0d1117;
+color:white;
+text-align:center;
+}
+/* Pages internes */
+.page{
+display:none;
+padding:40px;
+min-height:200vh;
+}
+.active{
+display:block;
+}
+/* Boutons bleus gaming */
+.gaming-btn{
+display:block;
+width:250px;
+margin:20px auto;
+padding:15px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+cursor:pointer;
+color:white;
+background:linear-gradient(270deg,#007bff,#00aaff,#007bff);
+background-size:400% 400%;
+animation:blueGlow 4s ease infinite;
+box-shadow:0 0 15px rgba(0,170,255,0.6);
+transition:0.3s;
+}
+.gaming-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 30px rgba(0,170,255,1);
+}
+@keyframes blueGlow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+/* Pages bloquées */
+.locked{
+pointer-events:none;
+}
+/* Bouton retour */
+.retour{
+margin-top:40px;
+background:#333;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+</style></head>
+<body>
+
+
+
+
+
+
+
+<!-- PAGE MENU -->
+<div id="menu" class="page active">
+<h1>Explorer le site</h1>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/x%20maison%20r%E9%E8l%20@ffx.html"><button class="gaming-btn" onclick="openPage('p1')">Bouton 1</button></a>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/Pagennn234.html"><button class="gaming-btn" onclick="openPage('p2')">Bouton 2</button></a>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/cr%E9e@%20133224@%5DEE%B0%23243%20compty%20eee%20XVC.html"><button class="gaming-btn" onclick="openPage('p3')">Bouton 3</button></a>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/profail.html"><button class="gaming-btn" onclick="openPage('p4')">Bouton 4</button></a>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/dd%E9couvrir.html"><button class="gaming-btn" onclick="openPage('p5')">Bouton 5</button></a>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/Connexion.html"><button class="gaming-btn" onclick="openPage('p6')">Bouton 6</button></a>
+<a href="file:///C:/Users/Leonardo%20BLANCO/Desktop/super%20site/dd%E9couvrir.html"><button class="retour" onclick="window.location.href='index.html'">Retour accueil</button></a>
+</div>
+<!-- 6 PAGES BLOQUÉES -->
+<div id="p1" class="page locked">
+<h1>Page 1</h1>
+<button class="retour" onclick="openPage('menu')">Retour</button>
+</div>
+<div id="p2" class="page locked">
+<h1>Page 2</h1>
+<button class="retour" onclick="openPage('menu')">Retour</button>
+</div>
+<div id="p3" class="page locked">
+<h1>Page 3</h1>
+<button class="retour" onclick="openPage('menu')">Retour</button>
+</div>
+<div id="p4" class="page locked">
+<h1>Page 4</h1>
+<button class="retour" onclick="openPage('menu')">Retour</button>
+</div>
+<div id="p5" class="page locked">
+<h1>Page 5</h1>
+<button class="retour" onclick="openPage('menu')">Retour</button>
+</div>
+<div id="p6" class="page locked">
+<h1>Page 6</h1>
+<button class="retour" onclick="openPage('menu')">Retour</button>
+</div>
+<script>
+function openPage(id){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+window.scrollTo(0,0);
+}
+</script>
+<br>
+</body></html>
