@@ -1,0 +1,33 @@
+# Environnement de développement Base44 pour ce projet.
+# Le site (pages HTML) et l'API /chat tournent dans un seul service Node sur le port 3000.
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    # Les dépendances sont installées au démarrage, après le montage du code,
+    # pour que toute modification du code soit visible sans rebuild.
+    command: ["sh", "-ec", "npm install --no-audit --no-fund && exec npm run dev"]
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      # Fourni par la plateforme : active les réglages propres au bac à sable.
+      - BASE44_PREVIEW_MODE
+    env_file:
+      # Secrets de la plateforme (clé OpenAI) — toujours en dernier.
+      - /run/base44/app.env
+    volumes:
+      - .:/app
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
+    restart: on-failure

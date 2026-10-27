@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "OPENAI_API_KEY",
+      "description": "Clé API OpenAI utilisée par l'API /chat (page d'accueil « Mini ChatGPT sécurisé »). À récupérer sur https://platform.openai.com/api-keys. Sans elle, tout le site fonctionne sauf le chat, qui répond « OpenAI a refusé la requête ».",
+      "requiredAtBoot": false
+    }
+  ]
+}

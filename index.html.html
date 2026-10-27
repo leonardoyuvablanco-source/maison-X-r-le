@@ -37,13 +37,13 @@ if(!message) return;
 addMessage('user', message);
 input.value='';
 try{
-const response = await fetch('http://localhost:3000/chat',{
+const response = await fetch('/chat',{
 method:'POST',
 headers:{'Content-Type':'application/json'},
 body: JSON.stringify({message})
 });
 const data = await response.json();
-addMessage('bot', data.reply);
+addMessage('bot', data.reply || data.error || 'Erreur inconnue');
 } catch(err){
 addMessage('bot','Erreur : impossible de contacter le serveur');
 console.error(err);
